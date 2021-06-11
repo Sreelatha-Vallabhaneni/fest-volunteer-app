@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header';
+import BannerCarousel from './components/carousel';
+import Form from './components/form';
+import AboutEvent from './components/about';
+import Contact from './components/contact';
+import './sass/main.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <BannerCarousel />
+      <AboutEvent />
+      <hr style={{color:'orange', height:'3px', margin:'0 120px'}}></hr>
+      <Form/>
+      <hr style={{color:'white', height:'3px', margin:'0 120px'}}></hr>
+      <Contact />
     </div>
   );
 }
