@@ -1,0 +1,14 @@
+.carousel-control-prev .sr-only, .carousel-control-next .sr-only{
+    display: none;
+}
+.carousel-caption{
+    bottom: 40%;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 1024px){
+    .carousel-item img{
+        height: 100%;
+    }
+}

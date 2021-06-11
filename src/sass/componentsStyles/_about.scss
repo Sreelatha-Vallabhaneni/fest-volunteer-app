@@ -1,0 +1,64 @@
+.about{
+    padding: $extra-medium;
+    margin: $large+60px  $extra-large;
+    padding-top: $large;
+    @include flexCenter;
+    align-items: flex-start;
+    &__event{
+        @include flexColumn;
+        padding: $small;
+        margin: $extra-medium;
+        color: $white;
+        animation: slideIn .8s ease forwards;
+        transition: all .8s ease;
+
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(20px) scale(.2);
+            }
+            100% {
+                transform: translateX(0px) scale(1);
+            }
+        }
+            h1{
+                font-family: $font-blackops;
+                font-size: 60px;
+                .summer{
+                    color: $orange;
+                    border-bottom: 2px solid $white;
+                }
+                .fest{
+                     border-bottom: 2px solid $orange;
+                }
+            }
+            p{
+                margin-top: $large+$extra-small;
+                line-height: 2em;
+                padding: $medium;
+                font-family: $font-merinda;
+                height: 100%;
+                font-size: 25px;
+                text-align: center;
+                span{
+                    color: $orange;
+                    font-size: 28px;
+                }
+            }
+    }
+    &__video{
+        padding: $small;
+        margin: $extra-medium;
+        margin-top: $large+$large;
+    }        
+}
+@media (max-width: 1024px){
+    .about{
+        flex-wrap: wrap;
+        &__video div{
+            padding: 0;
+            margin: 0;
+            width: auto !important;
+        }
+    }
+}
