@@ -34,7 +34,9 @@ function Form(){
     };
     
     axios.post(`https://jsonplaceholder.typicode.com/posts`, { user })
-      .then(res => console.log(res.data))
+      .then(res => {console.log(res.data);
+        alert('Successfully submitted')
+      })
   }
     return (
       <div className="volunteer" id="volunteer-form">
