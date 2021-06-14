@@ -55,6 +55,11 @@
 @media (max-width: 1024px){
     .about{
         flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 650px){
+    .about{
         &__video div{
             padding: 0;
             margin: 0;

@@ -4,32 +4,93 @@
         width: 100%;
         @include flexCenter;
         list-style: none;
+        & li::after{
+            content: "";
+            display: block;
+            height: 3px;
+            width: 0;
+            background: transparent;
+            transition: width 0.7s ease, background-color 0.5s ease;
+        }
+        
+        & li:hover:after {
+            width: 100%;
+            background: orange;
+          }
+        
             & li a{
-                color: white;
+                color:$white;
                 font-size: 28px;
                 font-weight: 700;
                 text-decoration: none;
-            }
-            @keyframes slideIn {
-                0% {
-                  transform: translateX(20px) scale(.2);
-                }
-                100% {
-                  transform: translateX(0px) scale(1);
-                }
-              }
+                height: 100%;
+                border-bottom: 3px solid transparent;
+            }    
     }
+    .nav-icon{
+        display: none;
+     }
 }
 
 
 @media (max-width: 1024px){
     .nav__list{
-        flex-wrap: wrap;
         justify-content: space-evenly;
+        
     }
 }
 @media (max-width: 650px){
     .nav{
         width:50%;
+        position: fixed;
+        top: 5rem;
+        width: 100%;
+        text-align: center;
+        border-radius:0 0 10px 10px;
+        &__list{
+            flex-direction: column;
+            width: 100%;
+        border-top: 1px solid #fff;
+        position: fixed;
+        left: -110%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        animation: color-me-in 5s infinite;
+        }
+        &__list.active {
+            box-shadow:
+             0 10px 27px rgba(0, 0, 0, 0.05);
+            left: 0px;
+            opacity: 1;
+            transition: all 0.5s ease;
+            z-index: 1;
+          }
+           &__list .active {
+            color: $white;
+            border: none;
+          }
+          .nav-icon{
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+            margin-right: -20px;
+            transform: translate(-100%, 60%);
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: $white;
+        } 
+
     }
+
+    @keyframes color-me-in {
+        /* You could think of as "step 1" */
+        0% {
+          background: orange;
+        }
+        /* You could think of as "step 2" */
+        100% {
+          background: rgb(247, 6, 106);
+        }
+      }
 }
